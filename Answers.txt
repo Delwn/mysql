@@ -33,6 +33,6 @@ Remove all constraints and modifications that are given to the database
    alter table Department drop column dept_no;
    alter table Student modify name varchar(20);
    alter table Classroom alter capacity drop default;
-   alter table Department drop index dept_name;
-   alter table Instructor drop check Instructor_chk_1;
+   alter table Department drop index dept_name; [might have a different value in place of 'dept_name']
+   alter table Instructor drop check Instructor_chk_1; [might have a different value in place of 'Instructor_chk_1']
 ___________________________________________________________________________________________________________________________________________________________   
