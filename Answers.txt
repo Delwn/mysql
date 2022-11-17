@@ -68,3 +68,14 @@ Teaches such that change the year of the course to 2010 with course id ‘CS-101
 ‘Fall’ semester   
 
    update Teaches set year=2010 where course_id='CS-101' and semester='Fall';
+___________________________________________________________________________________________________________________________________________________________
+Question 3
+3. Delete the student information who have total credits is zero.
+  
+   delete from Student where tot_cred = 0;
+___________________________________________________________________________________________________________________________________________________________
+Question 4
+4. Delete the record from instructor whose id starts with ‘765’
+
+   delete from Instructor where ID like '765%';
+   
