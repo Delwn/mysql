@@ -1,3 +1,5 @@
+Question 2
+
 a. Course such that the data type of course_id to varchar(10) [cannot be done hence convert 'credits']
 
    alter table Course modify credits varchar(10);
@@ -21,3 +23,16 @@ e. Department such that the contents of column dept_name should be unique
 f. Instructor such that the values for the column salary should be greater than 30000  [question changed]
 
   ALTER TABLE Instructor ADD CHECK (salary>30000);
+___________________________________________________________________________________________________________________________________________________________
+
+Question 3
+
+Remove all constraints and modifications that are given to the database
+
+   alter table Course modify credits int;
+   alter table Department drop column dept_no;
+   alter table Student modify name varchar(20);
+   alter table Classroom alter capacity drop default;
+   alter table Department drop index dept_name;
+   alter table Instructor drop check Instructor_chk_1;
+___________________________________________________________________________________________________________________________________________________________   
