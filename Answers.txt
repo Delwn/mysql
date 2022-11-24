@@ -78,4 +78,8 @@ Question 4
 4. Delete the record from instructor whose id starts with ‘765’
 
    delete from Instructor where ID like '765%';
-   
+___________________________________________________________________________________________________________________________________________________________
+5. Delete all courses that have never been offered(that is do not occur in the section relation)
+
+   DELETE FROM Course where course_id NOT IN (SELECT course_id FROM Section);
+___________________________________________________________________________________________________________________________________________________________   
