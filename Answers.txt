@@ -82,4 +82,31 @@ ________________________________________________________________________________
 5. Delete all courses that have never been offered(that is do not occur in the section relation)
 
    DELETE FROM Course where course_id NOT IN (SELECT course_id FROM Section);
-___________________________________________________________________________________________________________________________________________________________   
+***********************************************************************************************************************************************************
+  DQL
+  
+ 1. Retrieve the name of instructor along with department names of all instructors
+   
+     select name, dept_name from Instructor;
+___________________________________________________________________________________________________________________________________________________________
+ 2. Retrieve the semester names from teaches relation and avoid duplicates.
+
+      SELECT DISTINCT semester FROM Teaches;
+___________________________________________________________________________________________________________________________________________________________
+ 3. Retrieve the name of instructor along with 10% raise in their salary
+   
+   SELECT name,salary+(salary*10/100) FROM Instructor;
+___________________________________________________________________________________________________________________________________________________________
+4. Retrieve the id and name of instructor who have salary greater than 70000 and working under
+   computer science department
+   
+   SELECT id,name FROM Instructor where salary > 70000 AND dept_name='Comp.Sci.';
+___________________________________________________________________________________________________________________________________________________________
+5. Retrieve the names of all instructors along with their department names and department buliding
+names
+
+   
+___________________________________________________________________________________________________________________________________________________________
+
+     
+   
