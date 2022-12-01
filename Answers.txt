@@ -197,6 +197,18 @@ HAVING AND GROUP BY
 1. For each department, retrieve the department name, the number of instructors in the
    department, and their average salary.
 
+   select dept_name, count(*), avg(salary) from Instructor group by dept_name;
+___________________________________________________________________________________________________________________________________________________________
+2. For each course, retrieve the course_id, the semester, and the number of students who takes
+   that course.
+
+   select course_id, semester, count(distinct ID) from Subject group by course_id,semester;
+___________________________________________________________________________________________________________________________________________________________
+3. For each course on which more than two students taken, retrieve the course_id, the semester,
+   and the number of students who takes that course.
+
+   select course_id, semester, count(distinct ID) from Subject group by course_id,semester having count(distinct ID) > 2;
+   
 
 
    
