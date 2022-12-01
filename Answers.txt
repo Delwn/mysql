@@ -211,6 +211,7 @@ ________________________________________________________________________________
    
 
 
-   
+   select Teaches.course_id, count(Teaches.course_id), name from Teaches , Instructor right join Course on Instructor.dept_name=Course.dept_name where Instructor.ID=Teaches.ID group by course_id, Instructor.dept_name,
+Instructor.name;
 
 
