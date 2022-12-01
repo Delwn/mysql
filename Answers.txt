@@ -154,7 +154,22 @@ ________________________________________________________________________________
 3. Display Name of instructor as Uppercase, lowercase letters, and also shows as first letter in
 capital in separate columns
 
-   
+   select upper(name), lower(name), concat(upper(substring(name,1,1)), substring(name,2)) from Instructor;
+___________________________________________________________________________________________________________________________________________________________
+4. Replace the '-' in Course_id with '/' and display it as new column
+
+   select replace(course_id, '-', '/') from Course;
+___________________________________________________________________________________________________________________________________________________________
+5. Display the name of instructor with department name as full name
+
+   select concat(name,' ', dept_name) from Instructor;
+___________________________________________________________________________________________________________________________________________________________
+6. Display the last 3 numbers from course id
+
+   select substring(course_id,-3,3) from Course;
+***********************************************************************************************************************************************************
+
+
 
    
 
