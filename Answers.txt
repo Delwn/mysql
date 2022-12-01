@@ -137,7 +137,7 @@ BUILT IN FUNCTIONS
 
 A. Cos(absolute(-10))* e^2) ,print the rounded value
 
-   select ROUND(cos(abs(-10) * exp(2)), 3);
+   select ROUND(cos(radians(abs(-10) * exp(2))),2);
 ___________________________________________________________________________________________________________________________________________________________   
 B. Log10( ((5 4)%14) ) , print the result as 2 digit in decimal part
 
@@ -151,7 +151,10 @@ ________________________________________________________________________________
 
    select ceiling(12.9), floor(12.9);
 ___________________________________________________________________________________________________________________________________________________________
-3. 
+3. Display Name of instructor as Uppercase, lowercase letters, and also shows as first letter in
+capital in separate columns
+
+   
 
    
 
