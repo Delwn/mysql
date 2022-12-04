@@ -219,5 +219,7 @@ ________________________________________________________________________________
    
     create view view1 as select course_id, name,dept_name from teaches, instructor where instructor.ID = teaches.ID;
 __________________________________________________________________________________________________________________________________________________________________________________
-5.
+5. For each department that has more than two instructors, retrieve the department name and the
+   number of its instructors who are making more than $80,000.
 
+   
