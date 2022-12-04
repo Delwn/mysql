@@ -222,4 +222,6 @@ ________________________________________________________________________________
 5. For each department that has more than two instructors, retrieve the department name and the
    number of its instructors who are making more than $80,000.
 
-   
+   create view view4 as select dept_name, count(*) from instructor group by dept_name having count(*) > 2;
+   create view view5 as select dept_name, count(*) from instructor where salary > 80000 group by dept_name;
+   select view4.dept_name, count from view4 left join view6 on view4.dept_name = view6.dept_name;
