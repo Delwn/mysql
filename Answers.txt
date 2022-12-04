@@ -213,5 +213,11 @@ ________________________________________________________________________________
 
    select Teaches.course_id, count(Teaches.course_id), name from Teaches , Instructor right join Course on Instructor.dept_name=Course.dept_name where Instructor.ID=Teaches.ID group by course_id, Instructor.dept_name,
 Instructor.name;
-
+__________________________________________________________________________________________________________________________________________________________________________________
+4. For each course, retrieve the course_id, the instructor name, and the number of courses taken
+   from each department
+   
+    create view view1 as select course_id, name,dept_name from teaches, instructor where instructor.ID = teaches.ID;
+__________________________________________________________________________________________________________________________________________________________________________________
+5.
 
