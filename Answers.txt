@@ -255,3 +255,13 @@ ________________________________________________________________________________
 ___________________________________________________________________________________________________________________________________________________________ 
 5. 
    
+   start transaction;
+   insert into Student values('66666','Diya','Comp.Sci.',23);
+   update Student set ID='55555' where ID='66666';
+   savepoint A;
+   update Student set name='Clement' where ID='55555';
+   savepoint B;
+   update Student set name='Brice' where ID='55555';
+   rollback to savepoint B;
+   rollback to savepoint A;
+   rollback;
