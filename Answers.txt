@@ -223,3 +223,18 @@ ________________________________________________________________________________
    number of its instructors who are making more than $80,000.
 
 select dept_name, count(*) from Instructor where salary>80000 group by dept_name having count(*) > 1;
+***********************************************************************************************************************************************************
+DCL
+
+1. 
+
+   CREATE USER 'test'@'localhost' IDENTIFIED BY 'password';
+   grant select on university.Classroom to 'test'@'localhost';
+___________________________________________________________________________________________________________________________________________________________
+2. 
+   grant all on university.* to 'test'@'localhost';
+__________________________________________________________________________________________________________________________________________________________
+3.
+
+   revoke all on university.* from 'test'@'localhost';
+   revoke all on university.Classroom from 'test'@'localhost';
