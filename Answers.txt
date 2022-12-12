@@ -262,6 +262,7 @@ ________________________________________________________________________________
    update Student set name='Clement' where ID='55555';
    savepoint B;
    update Student set name='Brice' where ID='55555';
-   rollback to savepoint B;
+__________________________________________________________________________________________________________________________________________________________ 
+6. rollback to savepoint B;
    rollback to savepoint A;
    rollback;
