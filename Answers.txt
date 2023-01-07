@@ -313,16 +313,103 @@ END;
 ___________________________________________________________________________________________________________________________________________________________
 EXCEPTIONS
 
+!!excecute following statements first!!
+
+CREATE TABLE Classroom ( 
+  building varchar(10) DEFAULT NULL, 
+  room_number number NOT NULL, 
+  capacity number DEFAULT NULL, 
+  PRIMARY KEY (room_number) 
+);
+
+insert into Classroom (building,room_number,capacity) values ('Watson',100,30);
+insert into Classroom (building,room_number,capacity) values ('Packard',101,500);
+insert into Classroom (building,room_number,capacity) values ('Watson',120,50);
+insert into Classroom (building,room_number,capacity) values ('Painter',514,10);
+insert into Classroom (building,room_number,capacity) values ('Taylor',3128,70);
+
 NO_DATA_FOUND
 
-declare
-    b Classroom.building%type;
-    r Classroom.room_number%type;
-    c Classroom.capacity%type;
-begin
-select * into b,r,c from Classroom where capacity = 20;
+declare  
+    b Classroom.building%type;  
+    r Classroom.room_number%type;  
+    c Classroom.capacity%type;  
+    d number;  
+begin  
+select * into b,r,c from Classroom where capacity > 509;   
+exception  
+    when value_error THEN   
+      dbms_output.put_line('VALUE_ERROR');  
+    when no_data_found THEN   
+      dbms_output.put_line('NO_DATA_FOUND'); 
+    when zero_divide THEN   
+      dbms_output.put_line('ZERO DIVIDE'); 
+    when too_many_rows THEN   
+      dbms_output.put_line('TOO MANY ROWS');    
+  
+end
 
-exception
-    when no_data_found THEN 
-      dbms_output.put_line('No such entry');
+ZERO_DIVIDE
+
+declare  
+    b Classroom.building%type;  
+    r Classroom.room_number%type;  
+    c Classroom.capacity%type;  
+    d number;  
+begin  
+select * into b,r,c from Classroom where capacity = 50;   
+d := c/0; 
+exception  
+    when value_error THEN   
+      dbms_output.put_line('VALUE_ERROR');  
+    when no_data_found THEN   
+      dbms_output.put_line('NO_DATA_FOUND'); 
+    when zero_divide THEN   
+      dbms_output.put_line('ZERO DIVIDE'); 
+    when too_many_rows THEN   
+      dbms_output.put_line('TOO MANY ROWS');    
+  
+end;
+
+TOO_MANY_ROWS
+
+declare  
+    b Classroom.building%type;  
+    r Classroom.room_number%type;  
+    c Classroom.capacity%type;  
+    d number;  
+begin  
+select * into b,r,c from Classroom where capacity > 50;   
+exception  
+    when value_error THEN   
+      dbms_output.put_line('VALUE_ERROR');  
+    when no_data_found THEN   
+      dbms_output.put_line('NO_DATA_FOUND'); 
+    when zero_divide THEN   
+      dbms_output.put_line('ZERO DIVIDE'); 
+    when too_many_rows THEN   
+      dbms_output.put_line('TOO MANY ROWS');    
+  
+end;
+
+VALUE_ERROR
+
+declare  
+    b Classroom.building%type;  
+    r Classroom.room_number%type;  
+    c Classroom.capacity%type;  
+    d number;  
+begin  
+select * into b,r,c from Classroom where capacity = 50;  
+d := 'a';  
+exception  
+    when value_error THEN   
+      dbms_output.put_line('VALUE_ERROR');  
+    when no_data_found THEN   
+      dbms_output.put_line('NO_DATA_FOUND'); 
+    when zero_divide THEN   
+      dbms_output.put_line('ZERO DIVIDE'); 
+    when too_many_rows THEN   
+      dbms_output.put_line('TOO MANY ROWS');    
+  
 end;
