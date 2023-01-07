@@ -310,3 +310,19 @@ BEGIN
       dbms_output.put_line('Student: ' || names(i) || chr(10)|| ' sub 1:' || marks1(i) || ' ,sub 2:' || marks2(i) || chr(10)|| ' total Marks: ' || (marks1(i)+marks2(i))|| chr(10));  
    END LOOP;  
 END; 
+___________________________________________________________________________________________________________________________________________________________
+EXCEPTIONS
+
+NO_DATA_FOUND
+
+declare
+    b Classroom.building%type;
+    r Classroom.room_number%type;
+    c Classroom.capacity%type;
+begin
+select * into b,r,c from Classroom where capacity = 20;
+
+exception
+    when no_data_found THEN 
+      dbms_output.put_line('No such entry');
+end;
