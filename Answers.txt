@@ -424,4 +424,15 @@ delimiter ;
 call grade(91);
 
 ***********************************************************************************************************************************************************
+PROCEDURE
 
+1.
+
+delimiter --
+
+create procedure minimum (in num1 int, in num2 int) begin if num1>num2 then select num1 as greatest; else select num2 as greatest; end if; end;--
+
+delimiter ;
+call minimum(5,3);
+
+***********************************************************************************************************************************************************
