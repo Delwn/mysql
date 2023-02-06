@@ -418,5 +418,7 @@ PLSQL
 create procedure grade (in marks int) begin if marks > 90 then select 'S' as grade; elseif marks > 80 then select 'A+' as grade; elseif marks > 70 then select 'A' as grade; elseif marks > 60 then select 'B+' as grade; elseif marks >
 50 then select 'B' as grade; elseif marks > 40 then select 'P' as grade; else select 'F' as grade; end if; end;--
 
+call grade(91)--
+
 ***********************************************************************************************************************************************************
 
